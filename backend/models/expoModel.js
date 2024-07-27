@@ -1,28 +1,26 @@
 const mongoose = require("mongoose")
 
-const userSchema = mongoose.Schema(
+const expoSchema = mongoose.Schema(
     {
-        firstname: {
+        title: {
             type: String,
             required: true
         },
-        lastname: {
-            type: String,
+        date: {
+            type: mongoose.Schema.Types.Date,
             required: true
         },
-        username: {
+        location: {
             type: String,
             required: true,
-            unique: true
         },
-        contact: {
+        description: {
             type: String,
             required: true
         },
-        email: {
+        theme: {
             type: String,
             required: true,
-            unique: true,
         },
         password: {
             type: String,
@@ -45,5 +43,5 @@ const userSchema = mongoose.Schema(
     }
 )
 
-const User = mongoose.model("User", userSchema)
-module.exports = User
+const Expo = mongoose.model("Expo", expoSchema)
+module.exports = Expo
